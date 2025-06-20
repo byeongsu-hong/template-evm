@@ -1,0 +1,40 @@
+[profile.default]
+evm_version = "prague"
+libs = ["dependencies", "lib", "node_modules"]
+out = "out"
+remappings = [
+  # for local
+  "@openzeppelin-contracts-5.3.0/=dependencies/@openzeppelin-contracts-5.3.0/",
+  "@openzeppelin-contracts-upgradeable-5.3.0/=dependencies/@openzeppelin-contracts-upgradeable-5.3.0/",
+  "@oz/=dependencies/@openzeppelin-contracts-5.3.0/",
+  "@ozu/=dependencies/@openzeppelin-contracts-upgradeable-5.3.0/",
+  "@solady/=dependencies/solady-0.1.19/src",
+  "@std/=dependencies/forge-std-1.9.7/src/",
+  "@stub/=dependencies/stub-0.0.1/src",
+
+  # for dependencies
+  "@openzeppelin/contracts-upgradeable/=dependencies/@openzeppelin-contracts-upgradeable-5.3.0/",
+  "@openzeppelin/contracts/=dependencies/@openzeppelin-contracts-5.3.0/",
+]
+solc = "0.8.29"
+src = "src"
+
+[fmt]
+bracket_spacing = true
+line_length     = 100
+quote_style     = "single"
+tab_width       = 2
+
+[soldeer]
+remappings_generate   = false
+remappings_location   = "config"
+remappings_regenerate = false
+
+[dependencies]
+"@openzeppelin-contracts"             = "5.3.0"
+"@openzeppelin-contracts-upgradeable" = "5.3.0"
+forge-std                             = "1.9.7"
+solady                                = "0.1.19"
+stub                                  = { version = "0.0.1", git = "https://github.com/mitosis-org/stub", branch = "⭐️" }
+
+# See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
